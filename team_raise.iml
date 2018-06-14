@@ -18,11 +18,8 @@
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/main/java/top/yzlin/teamraise/raise_config.xml</file>
-          <file>file://$MODULE_DIR$/src/main/java/top/yzlin/teamraise/parse/modain.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/raise_config.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/platform/modian.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/member.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -55,5 +52,7 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.0.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.xerial:sqlite-jdbc:3.23.1" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.4.6" level="project" />
+    <orderEntry type="library" name="Maven: javax.servlet:jstl:1.2" level="project" />
+    <orderEntry type="library" name="Maven: taglibs:standard:1.1.2" level="project" />
   </component>
 </module>

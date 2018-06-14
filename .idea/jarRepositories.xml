@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="a1c1e5fb-4492-482f-ab43-e8e422e36b5c" />
+      <option name="name" value="a1c1e5fb-4492-482f-ab43-e8e422e36b5c" />
+      <option name="url" value="http://maven.aliyun.com/nexus/content/repositories/central/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="510db663-5d8a-44e3-9a30-a54ba62d65d8" />
+      <option name="name" value="510db663-5d8a-44e3-9a30-a54ba62d65d8" />
+      <option name="url" value="http://maven.aliyun.com/nexus/content/groups/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="f347419f-6a8d-41de-8c0e-0c355fa2b190" />
+      <option name="name" value="f347419f-6a8d-41de-8c0e-0c355fa2b190" />
+      <option name="url" value="http://repo2.maven.org/maven2/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="eaaee063-a96a-4940-815f-962cb7197eaf" />
+      <option name="name" value="eaaee063-a96a-4940-815f-962cb7197eaf" />
+      <option name="url" value="http://mirrors.ibiblio.org/pub/mirrors/maven2/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="2e518b02-61cf-49fc-b4b9-4060879fc8aa" />
+      <option name="name" value="2e518b02-61cf-49fc-b4b9-4060879fc8aa" />
+      <option name="url" value="https://maven-central.storage.googleapis.com" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="74b66e4f-726d-46f4-a1fb-b824481f1693" />
+      <option name="name" value="74b66e4f-726d-46f4-a1fb-b824481f1693" />
+      <option name="url" value="http://maven.net.cn/content/groups/public/" />
+    </remote-repository>
+  </component>
+</project>

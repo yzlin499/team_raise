@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!-- 指定 MyBatis 所用日志的具体实现 -->
+    <settings>
+        <setting name="logImpl" value="LOG4J2"/>
+    </settings>
+
+    <typeAliases>
+        <package name="top.yzlin.teamraise.entity"/>
+    </typeAliases>
+
+    <environments default="sql server">
+        <environment id="sql server">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="org.sqlite.JDBC"/>
+                <property name="url" value="jdbc:sqlite:D:/49968/Workspaces/InttlliJ IDEA/team_raise/db/teamRaise.db"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+
+    <mappers>
+        <mapper resource="sqlmappers/member.xml"/>
+    </mappers>
+
+</configuration>

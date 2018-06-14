@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <!--配置平台-->
+    <bean name="platform" class="java.util.HashMap">
+        <constructor-arg><map>
+            <entry key="modian">
+                <bean class="org.springframework.context.support.FileSystemXmlApplicationContext"
+                      c:configLocation="classpath:platform/modian.xml"/>
+            </entry>
+            <!--<entry key="平台名称">-->
+                <!--<bean class="org.springframework.context.support.FileSystemXmlApplicationContext"-->
+                      <!--c:configLocation="classpath:platform/平台配置.xml"/>-->
+            <!--</entry>-->
+        </map></constructor-arg>
+    </bean>
+
+    <!--配置成员数据加载器-->
+    <bean class="top.yzlin.teamraise.savedata.LoadMember"/>
+</beans>

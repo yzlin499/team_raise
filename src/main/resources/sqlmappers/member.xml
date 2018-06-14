@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sqlmappers.member">
+
+    <select id="MemberList" resultType="MemberInfo">
+        SELECT * FROM member;
+    </select>
+
+    <select id="SelectByName" parameterType="String" resultType="MemberInfo">
+        SELECT * FROM member WHERE name=#{name}
+    </select>
+
+    <update id="UpdateMember" parameterType="MemberInfo">
+        UPDATE member
+        <set>
+            <if test="platform!=null">platform=#{platform}</if>
+            <if test="searchWay!=null">searchWay=#{searchWay}</if>
+            <if test="info!=null">info=#{info}</if>
+        </set>
+        WHERE id=#{id}
+    </update>
+
+</mapper>

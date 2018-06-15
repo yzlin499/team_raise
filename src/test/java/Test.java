@@ -8,9 +8,10 @@ import java.util.stream.Stream;
 
 public class Test {
     public static void main(String[]args){
+        long a=System.currentTimeMillis();
         for(int i=0;i<10;i++){
             Tools.printArrays(RaisePool.getInstance().getRaiseInfo(i));
         }
-
+        System.out.println(System.currentTimeMillis()-a);
     }
 }

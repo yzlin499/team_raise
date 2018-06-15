@@ -6,15 +6,16 @@ import top.yzlin.teamraise.entity.RaiseInfo;
 import top.yzlin.teamraise.parse.ParseFactory;
 import top.yzlin.teamraise.savedata.DisposeMember;
 
+import java.util.Objects;
+import java.util.stream.Stream;
+
 public class RaisePool {
-    private static class Instance{
-        private static RaisePool newInstance=new RaisePool();
-    }
+    private static RaisePool newInstance=new RaisePool();
     private RaisePool(){
         init();
     }
     public static RaisePool getInstance(){
-        return Instance.newInstance;
+        return newInstance;
     }
 
     private CompleteInfo[] completeInfos;
@@ -25,12 +26,19 @@ public class RaisePool {
         for(int i=0;i<completeInfos.length;i++){
             MemberInfo m=disposeMember.getMember(i);
             if (m != null) {
-                completeInfos[i]=new CompleteInfo();
-                completeInfos[i].setLastAchieveTime(System.currentTimeMillis());
-                completeInfos[i].setMemberInfo(m);
-                completeInfos[i].setRaiseInfos(ParseFactory.createRaisesParser(m).parser(m));
+                CompleteInfo c=new CompleteInfo();
+                completeInfos[i]=c;
+                c.setLastAchieveTime(System.currentTimeMillis());
+                c.setMemberInfo(m);
             }
         }
+        Stream.of(completeInfos)
+                .parallel()
+                .filter(Objects::nonNull)
+                .forEach(c->{
+                    MemberInfo m=c.getMemberInfo();
+                    c.setRaiseInfos(ParseFactory.createRaisesParser(m).parser(m));
+                });
     }
 
     public RaiseInfo[] getRaiseInfo(int index){
@@ -45,4 +53,5 @@ public class RaisePool {
             return completeInfos[index].getRaiseInfos();
         }
     }
+
 }

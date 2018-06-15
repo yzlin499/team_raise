@@ -1,5 +1,6 @@
 package top.yzlin.teamraise.parse.modian;
 
+import org.eclipse.jdt.internal.compiler.lookup.SourceTypeBinding;
 import org.jsoup.Jsoup;
 import top.yzlin.teamraise.entity.CompleteInfo;
 import top.yzlin.teamraise.entity.MemberInfo;
@@ -11,6 +12,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.Arrays;
 
 
@@ -29,7 +31,12 @@ public class AutoParseNewestRaises implements RaisesAchieveStrategy {
 
     @Override
     public RaiseInfo[] parser(MemberInfo memberInfo) {
-        return raiseProjectParser.getRaiseInfos(downloadData(memberInfo.getName(),memberInfo.getInfo()));
+        int memberID=memberInfo.getId();
+        RaiseInfo[] ris=raiseProjectParser.getRaiseInfos(downloadData(memberInfo.getName(),memberInfo.getInfo()));
+        for(RaiseInfo r:ris){
+            r.setMemberID(memberID);
+        }
+        return ris;
     }
 
     @Override
@@ -39,7 +46,7 @@ public class AutoParseNewestRaises implements RaisesAchieveStrategy {
 
     private int[] downloadData(String name,String yyhName){
         try {
-            return Jsoup.parse(new URL("https://zhongchou.modian.com/search?key="+name), 30000)
+            return Jsoup.parse(new URL("https://zhongchou.modian.com/search?key="+ URLEncoder.encode(name,"UTF-8")), 30000)
                     .body().getElementsByClass("pro_ul").first().children().stream()
                     .filter(e-> !e.toString().contains("此次众筹已结束，感谢所有人支持。"))
                     .filter(e-> yyhName==null || "".equals(yyhName) || e.getElementsByClass("author").first()
@@ -53,6 +60,8 @@ public class AutoParseNewestRaises implements RaisesAchieveStrategy {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (NullPointerException e){
+
         }
         return new int[0];
     }

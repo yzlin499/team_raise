@@ -19,6 +19,10 @@
         </map></constructor-arg>
     </bean>
 
+    <bean name="mainServletCache" class="java.lang.Long"
+        c:value="20000"
+    />
+
     <!--配置成员数据加载器-->
     <bean class="top.yzlin.teamraise.savedata.LoadMember"/>
 </beans>

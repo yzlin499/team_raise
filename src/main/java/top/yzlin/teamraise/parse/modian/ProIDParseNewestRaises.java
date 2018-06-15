@@ -22,8 +22,13 @@ public class ProIDParseNewestRaises implements RaisesAchieveStrategy {
 
     @Override
     public RaiseInfo[] parser(MemberInfo memberInfo) {
-        return raiseProjectParser.getRaiseInfos(
+        int memberID=memberInfo.getId();
+        RaiseInfo[] ris=raiseProjectParser.getRaiseInfos(
                 Stream.of(memberInfo.getInfo().split(",")).mapToInt(Integer::valueOf).toArray());
+        for(RaiseInfo r:ris){
+            r.setMemberID(memberID);
+        }
+        return ris;
     }
 
     @Override

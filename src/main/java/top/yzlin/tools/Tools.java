@@ -4,6 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Collection;
 
 /**
  * 工具类
@@ -41,6 +42,13 @@ public class Tools {
     public static void printArrays(Object[]text){
         print("数组共"+text.length+"个");
         for(Object temp:text){
+            System.out.println(temp.toString());
+        }
+    }
+
+    public static void printCollection(Collection collection){
+        print("数组共"+collection.size()+"个");
+        for(Object temp:collection){
             System.out.println(temp.toString());
         }
     }

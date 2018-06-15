@@ -6,6 +6,7 @@ import java.util.Date;
 
 public class RaiseInfo {
     private int proID;
+    private int memberID;
     private double goalMoney;
     private String title;
     private String url;
@@ -15,6 +16,14 @@ public class RaiseInfo {
 
     public void setIntroduce(String introduce) {
         this.introduce = introduce;
+    }
+
+    public int getMemberID() {
+        return memberID;
+    }
+
+    public void setMemberID(int memberID) {
+        this.memberID = memberID;
     }
 
     @JSONField(name = "end_time",format = "yyyy-MM-dd hh:mm:ss")

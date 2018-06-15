@@ -10,12 +10,16 @@ import top.yzlin.tools.Tools;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.stream.Stream;
 
 public class ProjectParser implements RaiseProjectParser {
     @Override
     public RaiseInfo[] getRaiseInfos(int[] ID) {
         ArrayList<RaiseInfo> infoArrayList=new ArrayList<>(ID.length);
-        for(int n:ID){
+        Arrays.stream(ID)
+                .parallel()
+                .forEach(n->{
             JSONObject jo=JSONObject.parseObject(
                     NetTools.sendPost("https://wds.modian.com/api/project/detail",infoParam(n)));
             if(jo.getIntValue("status")==0) {
@@ -24,7 +28,7 @@ public class ProjectParser implements RaiseProjectParser {
                 raiseInfo.setIntroduce(introduce(raiseInfo.getUrl()));
                 infoArrayList.add(raiseInfo);
             }
-        }
+        });
         return infoArrayList.toArray(new RaiseInfo[infoArrayList.size()]);
     }
 

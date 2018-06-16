@@ -19,9 +19,11 @@
         </map></constructor-arg>
     </bean>
 
-    <bean name="mainServletCache" class="java.lang.Long"
-        c:value="20000"
-    />
+    <!--主页缓存时间-->
+    <bean name="mainServletCache" class="java.lang.Long" c:value="20000"/>
+
+    <!--最近集资进度缓存时间-->
+    <bean name="alreadyRaiseCache" class="java.lang.Long" c:value="10000"/>
 
     <!--配置成员数据加载器-->
     <bean class="top.yzlin.teamraise.savedata.LoadMember"/>

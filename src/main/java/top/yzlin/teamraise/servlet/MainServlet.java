@@ -34,7 +34,6 @@ public class MainServlet {
         mainView=new ModelAndView("/WEB-INF/content/index.jsp")
                 .addObject("memberInfoList",memberInfoList);
         resetCache=(Long) LoadConfig.getInstance().getConfig("mainServletCache");
-        System.out.println(resetCache);
         memberIDs=memberInfoList.stream().map(MemberInfo::getId).toArray(Integer[]::new);
     }
 
@@ -45,9 +44,17 @@ public class MainServlet {
         long nowTime=System.currentTimeMillis();
         if(nowTime-lastTime>resetCache){
             lastTime=nowTime;
-            mainView.addObject("raiseInfoList",Stream.of(memberIDs)
+            List<RaiseInfo> raiseInfoList=Stream.of(memberIDs)
                     .flatMap(i-> Stream.of(raisePool.getRaiseInfo(i)))
-                    .collect(Collectors.toList()));
+                    .sorted((o1, o2) -> {
+                        double n1=o1.getAlreadyRaiseMoney()/o1.getGoalMoney();
+                        double n2=o2.getAlreadyRaiseMoney()/o2.getGoalMoney();
+                        n1=n1>=1?n1-1:n1+1;
+                        n2=n2>=1?n2-1:n2+1;
+                        return Double.compare(n2,n1);
+                    })
+                    .collect(Collectors.toList());
+            mainView.addObject("raiseInfoList",raiseInfoList);
         }
         return mainView;
     }

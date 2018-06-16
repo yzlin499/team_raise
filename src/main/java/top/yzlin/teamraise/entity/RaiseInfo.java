@@ -1,6 +1,7 @@
 package top.yzlin.teamraise.entity;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import top.yzlin.teamraise.parse.AlreadyRaise;
 
 import java.util.Date;
 
@@ -13,6 +14,7 @@ public class RaiseInfo {
     private Date endTime;
     private String cover;
     private String introduce;
+    private AlreadyRaise alreadyRaise;
 
     public void setIntroduce(String introduce) {
         this.introduce = introduce;
@@ -81,6 +83,18 @@ public class RaiseInfo {
 
     public int getProID() {
         return proID;
+    }
+
+    public AlreadyRaise getAlreadyRaise() {
+        return alreadyRaise;
+    }
+
+    public void setAlreadyRaise(AlreadyRaise alreadyRaise) {
+        this.alreadyRaise = alreadyRaise;
+    }
+
+    public double getAlreadyRaiseMoney() {
+        return alreadyRaise.getMoney(proID);
     }
 
     @Override

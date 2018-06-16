@@ -111,6 +111,8 @@
                         <%--此处是成员列表--%>
                         <ul class="project-filter">
                             <li class="active"><a data-filter="*" href="#">All</a></li>
+                            <li><a data-filter=".success" href="#">未完成</a></li>
+                            <li><a data-filter=".false" href="#">已完成</a></li>
                             <c:forEach items="${requestScope.memberInfoList}" var="memberInfo">
                                 <li><a data-filter=".member${memberInfo.id}" href="#">${memberInfo.name}</a></li>
                             </c:forEach>
@@ -118,13 +120,13 @@
                         </ul><!-- /.project-filter -->
                     </div>
                     <div class="project-wrap three-columns ">
+
+
                         <c:forEach items="${requestScope.raiseInfoList}" var="raiseInfo">
-                            <div class="entry project-item member${raiseInfo.memberID}">
+                            <div class="entry project-item member${raiseInfo.memberID} ">
                                 <div class="item-wrap">
                                     <div class="project-thumb">
-                                        <a href="${raiseInfo.url}">
-                                            <img src="${raiseInfo.cover}" alt="image">
-                                        </a>
+                                        <img src="${raiseInfo.cover}" alt="image">
                                     </div>
                                     <div class="project-info">
                                         <div class="project-info-wrap">
@@ -132,13 +134,16 @@
                                                 <a href="${raiseInfo.url}">${raiseInfo.title}</a>
                                             </h3>
                                             <ul class="project-categories">
-                                                <li><p>${raiseInfo.goalMoney}元</p></li>
+                                                <li><p>${raiseInfo.alreadyRaiseMoney}/${raiseInfo.goalMoney}元</p></li>
+                                                <li><p>${raiseInfo.alreadyRaiseMoney}/${raiseInfo.goalMoney}元</p></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </c:forEach>
+
+
                     </div><!-- /.project-wrap -->
                 </div><!-- /.flat-project -->
             </div><!-- /.row -->

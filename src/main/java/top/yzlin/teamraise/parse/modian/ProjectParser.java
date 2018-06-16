@@ -3,6 +3,7 @@ package top.yzlin.teamraise.parse.modian;
 import com.alibaba.fastjson.JSONObject;
 import org.jsoup.Jsoup;
 import top.yzlin.teamraise.entity.RaiseInfo;
+import top.yzlin.teamraise.parse.AlreadyRaiseFactory;
 import top.yzlin.teamraise.parse.RaiseProjectParser;
 import top.yzlin.tools.NetTools;
 import top.yzlin.tools.Tools;
@@ -26,6 +27,7 @@ public class ProjectParser implements RaiseProjectParser {
                 RaiseInfo raiseInfo = jo.getJSONArray("data").getJSONObject(0).toJavaObject(RaiseInfo.class);
                 raiseInfo.setUrl("https://zhongchou.modian.com/item/" + n + ".html");
                 raiseInfo.setIntroduce(introduce(raiseInfo.getUrl()));
+                raiseInfo.setAlreadyRaise(AlreadyRaiseFactory.createRaisesParser("modian"));
                 infoArrayList.add(raiseInfo);
             }
         });

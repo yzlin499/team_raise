@@ -5,9 +5,9 @@ import top.yzlin.teamraise.entity.RaiseInfo;
 
 public interface AlreadyRaise {
 
-    default int getMoney(RaiseInfo raiseInfo){
+    default double getMoney(RaiseInfo raiseInfo){
         return getMoney(raiseInfo.getProID());
     }
 
-    int getMoney(int proID);
+    double getMoney(int proID);
 }

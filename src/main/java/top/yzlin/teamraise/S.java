@@ -12,5 +12,13 @@ public final class S {
         public final static String SelectByName=NameSpace+"SelectByName";
     }
 
+    public final static class flag {
+        private final static String NameSpace = "sqlmappers.flag.";
+        public final static String SubmitGoalFlag = NameSpace + "SubmitGoalFlag";
+
+        private flag() {
+        }
+    }
+
 
 }

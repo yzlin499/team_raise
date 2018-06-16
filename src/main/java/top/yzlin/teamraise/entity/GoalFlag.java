@@ -1,15 +1,15 @@
 package top.yzlin.teamraise.entity;
 
 public class GoalFlag extends BasicFlag {
-    private int goal;
+    private int goalMoney;
     private int rewardMoney;
 
-    public int getGoal() {
-        return goal;
+    public int getGoalMoney() {
+        return goalMoney;
     }
 
-    public void setGoal(int goal) {
-        this.goal = goal;
+    public void setGoalMoney(int goalMoney) {
+        this.goalMoney = goalMoney;
     }
 
     public int getRewardMoney() {

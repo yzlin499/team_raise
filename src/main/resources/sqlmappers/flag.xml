@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sqlmappers.flag">
+
+    <insert id="SubmitGoalFlag" parameterType="GoalFlag">
+        INSERT INTO goal_flag (memberID,type,endTime,goalMoney,rewardMoney,info,enable,contactWay)
+        VALUES (#{memberID},#{type},#{endTime},#{goalMoney},#{rewardMoney},#{info},FALSE,#{contactWay})
+    </insert>
+
+</mapper>

@@ -24,6 +24,7 @@
 
     <mappers>
         <mapper resource="sqlmappers/member.xml"/>
+        <mapper resource="sqlmappers/flag.xml"/>
     </mappers>
 
 </configuration>

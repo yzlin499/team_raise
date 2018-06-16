@@ -3,7 +3,6 @@ package top.yzlin.teamraise.parse;
 import top.yzlin.teamraise.LoadConfig;
 
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.Map;
 
 public abstract class BasicAlreadyRaiseCache implements AlreadyRaise {

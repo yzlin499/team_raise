@@ -16,58 +16,55 @@
     <table id="10" parent="2" name="sqlite_master">
       <System>1</System>
     </table>
-    <table id="11" parent="2" name="user"/>
-    <column id="12" parent="6" name="id">
+    <table id="11" parent="2" name="sqlite_sequence">
+      <System>1</System>
+    </table>
+    <table id="12" parent="2" name="user"/>
+    <column id="13" parent="6" name="id">
       <Position>1</Position>
-      <DataType>INT|0</DataType>
+      <DataType>INTEGER|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="13" parent="6" name="memberID">
+    <column id="14" parent="6" name="memberID">
       <Position>2</Position>
       <DataType>INT|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="14" parent="6" name="type">
+    <column id="15" parent="6" name="type">
       <Position>3</Position>
       <DataType>VARCHAR|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="15" parent="6" name="endTime">
+    <column id="16" parent="6" name="endTime">
       <Position>4</Position>
       <DataType>TIMESTAMP|0</DataType>
     </column>
-    <column id="16" parent="6" name="goalMoney">
+    <column id="17" parent="6" name="goalMoney">
       <Position>5</Position>
       <DataType>INT|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="17" parent="6" name="rewardMoney">
+    <column id="18" parent="6" name="rewardMoney">
       <Position>6</Position>
       <DataType>INT|0</DataType>
     </column>
-    <column id="18" parent="6" name="info">
+    <column id="19" parent="6" name="info">
       <Position>7</Position>
       <DataType>VARCHAR|0</DataType>
     </column>
-    <column id="19" parent="6" name="enable">
+    <column id="20" parent="6" name="enable">
       <Position>8</Position>
       <DataType>BOOLEAN|0</DataType>
       <DefaultExpression>FALSE</DefaultExpression>
     </column>
-    <column id="20" parent="6" name="contactWay">
+    <column id="21" parent="6" name="contactWay">
       <Position>9</Position>
       <DataType>VARCHAR|0</DataType>
     </column>
-    <index id="21" parent="6" name="sqlite_autoindex_goal_flag_1">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <ColumnCollations></ColumnCollations>
-      <Unique>1</Unique>
-    </index>
     <key id="22" parent="6">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_goal_flag_1</UnderlyingIndexName>
     </key>
     <foreign-key id="23" parent="6" name="goal_flag_member_id_fk">
       <ColNames>memberID</ColNames>
@@ -111,8 +108,9 @@
     </key>
     <column id="31" parent="8" name="id">
       <Position>1</Position>
-      <DataType>INT|0</DataType>
+      <DataType>INTEGER|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="32" parent="8" name="memberID">
       <Position>2</Position>
@@ -150,7 +148,7 @@
     <column id="39" parent="8" name="enable">
       <Position>9</Position>
       <DataType>BOOLEAN|0</DataType>
-      <DefaultExpression>false</DefaultExpression>
+      <DefaultExpression>FALSE</DefaultExpression>
     </column>
     <column id="40" parent="8" name="info">
       <Position>10</Position>
@@ -160,150 +158,143 @@
       <Position>11</Position>
       <DataType>VARCHAR|0</DataType>
     </column>
-    <index id="42" parent="8" name="sqlite_autoindex_proportion_flag_1">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <ColumnCollations></ColumnCollations>
-      <Unique>1</Unique>
-    </index>
-    <key id="43" parent="8">
+    <key id="42" parent="8">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_proportion_flag_1</UnderlyingIndexName>
     </key>
-    <foreign-key id="44" parent="8">
+    <foreign-key id="43" parent="8">
       <ColNames>memberID</ColNames>
       <RefTableName>member</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="45" parent="9" name="id">
+    <column id="44" parent="9" name="id">
       <Position>1</Position>
-      <DataType>INT|0</DataType>
+      <DataType>INTEGER|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="46" parent="9" name="memberID">
+    <column id="45" parent="9" name="memberID">
       <Position>2</Position>
       <DataType>INT|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="47" parent="9" name="type">
+    <column id="46" parent="9" name="type">
       <Position>3</Position>
       <DataType>VARCHAR|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="48" parent="9" name="startMoney">
+    <column id="47" parent="9" name="startMoney">
       <Position>4</Position>
       <DataType>INT|0</DataType>
       <DefaultExpression>0</DefaultExpression>
     </column>
-    <column id="49" parent="9" name="oneGreat">
+    <column id="48" parent="9" name="oneGreat">
       <Position>5</Position>
       <DataType>INT|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="50" parent="9" name="addMoney">
+    <column id="49" parent="9" name="addMoney">
       <Position>6</Position>
       <DataType>INT|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="51" parent="9" name="upperLimit">
+    <column id="50" parent="9" name="upperLimit">
       <Position>7</Position>
       <DataType>INT|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
     </column>
-    <column id="52" parent="9" name="enable">
+    <column id="51" parent="9" name="enable">
       <Position>8</Position>
       <DataType>BOOLEAN|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>FALSE</DefaultExpression>
     </column>
-    <column id="53" parent="9" name="info">
+    <column id="52" parent="9" name="info">
       <Position>9</Position>
       <DataType>VARCHAR|0</DataType>
     </column>
-    <column id="54" parent="9" name="contactWay">
+    <column id="53" parent="9" name="contactWay">
       <Position>10</Position>
       <DataType>VARCHAR|0</DataType>
     </column>
-    <column id="55" parent="9" name="endTime">
+    <column id="54" parent="9" name="endTime">
       <Position>11</Position>
       <DataType>TIMESTAMP|0</DataType>
     </column>
-    <index id="56" parent="9" name="sqlite_autoindex_relay_flag_1">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <ColumnCollations></ColumnCollations>
-      <Unique>1</Unique>
-    </index>
-    <key id="57" parent="9">
+    <key id="55" parent="9">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_relay_flag_1</UnderlyingIndexName>
     </key>
-    <foreign-key id="58" parent="9" name="relay_flag_member_id_fk">
+    <foreign-key id="56" parent="9" name="relay_flag_member_id_fk">
       <ColNames>memberID</ColNames>
       <RefTableName>member</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="59" parent="10" name="type">
+    <column id="57" parent="10" name="type">
       <Position>1</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="60" parent="10" name="name">
+    <column id="58" parent="10" name="name">
       <Position>2</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="61" parent="10" name="tbl_name">
+    <column id="59" parent="10" name="tbl_name">
       <Position>3</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="62" parent="10" name="rootpage">
+    <column id="60" parent="10" name="rootpage">
       <Position>4</Position>
       <DataType>integer|0</DataType>
     </column>
-    <column id="63" parent="10" name="sql">
+    <column id="61" parent="10" name="sql">
       <Position>5</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="64" parent="11" name="id">
+    <column id="62" parent="11" name="name">
+      <Position>1</Position>
+    </column>
+    <column id="63" parent="11" name="seq">
+      <Position>2</Position>
+    </column>
+    <column id="64" parent="12" name="id">
       <Position>1</Position>
       <DataType>INT|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="65" parent="11" name="userID">
+    <column id="65" parent="12" name="userID">
       <Position>2</Position>
       <DataType>INT|0</DataType>
     </column>
-    <column id="66" parent="11" name="password">
+    <column id="66" parent="12" name="password">
       <Position>3</Position>
       <DataType>CHAR(32)|0</DataType>
     </column>
-    <column id="67" parent="11" name="memberID">
+    <column id="67" parent="12" name="memberID">
       <Position>4</Position>
       <DataType>INT|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="68" parent="11" name="qqNumber">
+    <column id="68" parent="12" name="qqNumber">
       <Position>5</Position>
       <DataType>INT|0</DataType>
     </column>
-    <column id="69" parent="11" name="mail">
+    <column id="69" parent="12" name="mail">
       <Position>6</Position>
       <DataType>VARCHAR|0</DataType>
     </column>
-    <index id="70" parent="11" name="sqlite_autoindex_user_1">
+    <index id="70" parent="12" name="sqlite_autoindex_user_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <key id="71" parent="11">
+    <key id="71" parent="12">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_user_1</UnderlyingIndexName>
     </key>
-    <foreign-key id="72" parent="11">
+    <foreign-key id="72" parent="12">
       <ColNames>memberID</ColNames>
       <RefTableName>member</RefTableName>
       <RefColNames>id</RefColNames>

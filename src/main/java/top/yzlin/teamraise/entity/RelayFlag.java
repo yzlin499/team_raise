@@ -1,8 +1,8 @@
 package top.yzlin.teamraise.entity;
 
-public class ProportionFlag extends BasicFlag {
+public class RelayFlag extends BasicFlag {
     private int startMoney;
-    private int principal;
+    private int onGreat;
     private int addMoney;
     private int upperLimit;
 
@@ -14,12 +14,12 @@ public class ProportionFlag extends BasicFlag {
         this.startMoney = startMoney;
     }
 
-    public int getPrincipal() {
-        return principal;
+    public int getOnGreat() {
+        return onGreat;
     }
 
-    public void setPrincipal(int principal) {
-        this.principal = principal;
+    public void setOnGreat(int onGreat) {
+        this.onGreat = onGreat;
     }
 
     public int getAddMoney() {

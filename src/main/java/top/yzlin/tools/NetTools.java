@@ -1,5 +1,9 @@
 package top.yzlin.tools;
 
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,12 +12,40 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.X509Certificate;
 import java.util.Map;
 
 public class NetTools {
     /**
      * 获取GET数据
      */
+
+    static {
+        try {
+            SSLContext sc = SSLContext.getInstance("SSL");
+            sc.init(null, new TrustManager[]{new X509TrustManager() {
+                @Override
+                public X509Certificate[] getAcceptedIssuers() {
+                    return null;
+                }
+
+                @Override
+                public void checkServerTrusted(X509Certificate[] certs, String authType) {
+                }
+
+                @Override
+                public void checkClientTrusted(X509Certificate[] certs, String authType) {
+                }
+            }}, null);
+            HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
+            HttpsURLConnection.setDefaultHostnameVerifier((urlHostName, session) -> true);
+        } catch (NoSuchAlgorithmException | KeyManagementException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public static String sendGet(String url, String param) {
         return sendGet(url + "?" + param);
@@ -22,7 +54,6 @@ public class NetTools {
     public static String sendGet(String url) {
         HttpURLConnection connection;
         try {
-            url= URLEncoder.encode(url,"utf8");
             connection = (HttpURLConnection) new URL(url).openConnection();
             connection.setRequestProperty("accept", "*/*");
             connection.setRequestProperty("connection","Keep-Alive");
@@ -31,6 +62,7 @@ public class NetTools {
             connection.setInstanceFollowRedirects(false);
             connection.connect();
         } catch (IOException e) {
+            e.printStackTrace();
             Tools.print("get的网络区炸了，10秒之后重新获取");
             Tools.sleep(10000);
             return sendGet(url);
@@ -43,6 +75,7 @@ public class NetTools {
             }
             return result.toString();
         } catch (IOException e ) {
+            e.printStackTrace();
             Tools.print("get的读写区炸了，10秒之后重新获取");
             Tools.sleep(10000);
             return sendGet(url);

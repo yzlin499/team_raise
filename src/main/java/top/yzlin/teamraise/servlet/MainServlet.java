@@ -45,6 +45,7 @@ public class MainServlet {
         if(nowTime-lastTime>resetCache){
             lastTime=nowTime;
             List<RaiseInfo> raiseInfoList=Stream.of(memberIDs)
+                    .parallel()
                     .flatMap(i-> Stream.of(raisePool.getRaiseInfo(i)))
                     .sorted((o1, o2) -> {
                         double n1=o1.getAlreadyRaiseMoney()/o1.getGoalMoney();

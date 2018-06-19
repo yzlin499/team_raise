@@ -39,12 +39,7 @@ public class ProjectParser implements RaiseProjectParser {
     }
 
     private static String introduce(String url){
-        try {
-            return Jsoup.parse(new URL(url), 30000)
+        return Jsoup.parse(NetTools.sendGet(url))
                     .body().getElementsByClass("short-intro").first().child(0).text();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return "";
     }
 }

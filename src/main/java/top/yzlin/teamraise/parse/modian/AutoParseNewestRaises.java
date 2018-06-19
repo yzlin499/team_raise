@@ -7,6 +7,7 @@ import top.yzlin.teamraise.entity.MemberInfo;
 import top.yzlin.teamraise.entity.RaiseInfo;
 import top.yzlin.teamraise.parse.RaiseProjectParser;
 import top.yzlin.teamraise.parse.RaisesAchieveStrategy;
+import top.yzlin.tools.NetTools;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -46,7 +47,7 @@ public class AutoParseNewestRaises implements RaisesAchieveStrategy {
 
     private int[] downloadData(String name,String yyhName){
         try {
-            return Jsoup.parse(new URL("https://zhongchou.modian.com/search?key="+ URLEncoder.encode(name,"UTF-8")), 30000)
+            return Jsoup.parse(NetTools.sendGet("https://zhongchou.modian.com/search", "key=" + URLEncoder.encode(name, "UTF-8")))
                     .body().getElementsByClass("pro_ul").first().children().stream()
                     .filter(e-> !e.toString().contains("此次众筹已结束，感谢所有人支持。"))
                     .filter(e-> yyhName==null || "".equals(yyhName) || e.getElementsByClass("author").first()
@@ -55,10 +56,6 @@ public class AutoParseNewestRaises implements RaisesAchieveStrategy {
                     .mapToInt(e-> Integer.valueOf(e.attr("data-pro-id")))
                     .toArray();
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
             e.printStackTrace();
         } catch (NullPointerException e){
 

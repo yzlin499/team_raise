@@ -2,6 +2,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="top.yzlin.teamraise.pool.RaisePool" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <!DOCTYPE html>
@@ -134,7 +135,9 @@
                                                 <a href="${raiseInfo.url}">${raiseInfo.title}</a>
                                             </h3>
                                             <ul class="project-categories">
-                                                <li><p>${raiseInfo.alreadyRaiseMoney}/${raiseInfo.goalMoney}元</p></li>
+                                                <li><fmt:formatNumber
+                                                        value="${raiseInfo.alreadyRaiseMoney/raiseInfo.goalMoney}"
+                                                        type="currency" pattern=".00%"/></li>
                                                 <li><p>${raiseInfo.alreadyRaiseMoney}/${raiseInfo.goalMoney}元</p></li>
                                             </ul>
                                         </div>

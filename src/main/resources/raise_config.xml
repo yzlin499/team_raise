@@ -27,4 +27,7 @@
 
     <!--配置成员数据加载器-->
     <bean class="top.yzlin.teamraise.savedata.LoadMember"/>
+
+    <!--日志类-->
+    <!--<bean name="logPath" class="java.lang.String" c:original="log4j2.xml"/>-->
 </beans>

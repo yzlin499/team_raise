@@ -57,42 +57,43 @@
                     <div class="header-wrap clearfix">
                         <div id="logo" class="logo">
                             <a href="index.html" rel="home">
-                                <img src="images/logo.svg" alt="image">
+                                <img src="images/logo.png" alt="image">
                             </a>
                         </div><!-- /.logo -->
+
                         <div class="nav-wrap">
                             <div class="btn-menu"></div>
                             <nav id="mainnav" class="mainnav">
                                 <%--此处用于做头部的列表--%>
                                 <ul class="menu">
                                     <li class="home">
-                                        <a href="index.html">成员</a>
-                                        <ul class="submenu">
-                                            <li><a href="#">Demo 1</a></li>
-                                        </ul>
+                                        <%--<a href="index.html">成员</a>--%>
+                                        <%--<ul class="submenu">--%>
+                                        <%--<li><a href="#">Demo 1</a></li>--%>
+                                        <%--</ul>--%>
                                     </li>
                                 </ul>
                             </nav><!-- /.mainnav -->
                         </div><!-- /.nav-wrap -->
 
                         <%--此处是右方小控件的列表--%>
-                        <ul class="menu-extra">
-                            <li id="s" class="search-box">
-                                <a href="#"><i class="fa fa-search"></i></a>
-                                <div class="submenu">
-                                    <div class="widget widget_search">
-                                        <form role="search" method="get" class="search-form" action="#">
-                                            <label>
-                                                <span class="screen-reader-text">Search for:</span>
-                                                <input type="search" class="search-field" placeholder="Search …"
-                                                       value="" name="s" title="Search for:">
-                                            </label>
-                                            <input type="submit" class="search-submit" value="Search">
-                                        </form>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                        <%--<ul class="menu-extra">--%>
+                        <%--<li id="s" class="search-box">--%>
+                        <%--<a href="#"><i class="fa fa-search"></i></a>--%>
+                        <%--<div class="submenu">--%>
+                        <%--<div class="widget widget_search">--%>
+                        <%--<form role="search" method="get" class="search-form" action="#">--%>
+                        <%--<label>--%>
+                        <%--<span class="screen-reader-text">Search for:</span>--%>
+                        <%--<input type="search" class="search-field" placeholder="Search …"--%>
+                        <%--value="" name="s" title="Search for:">--%>
+                        <%--</label>--%>
+                        <%--<input type="submit" class="search-submit" value="Search">--%>
+                        <%--</form>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</li>--%>
+                        <%--</ul>--%>
                     </div><!-- /.header-wrap -->
                 </div>
             </div> <!-- /.row -->
@@ -127,7 +128,7 @@
                             <div class="entry project-item member${raiseInfo.memberID} ">
                                 <div class="item-wrap">
                                     <div class="project-thumb">
-                                        <img src="${raiseInfo.cover}" alt="image">
+                                        <img src="${raiseInfo.cover}" alt="image" onclick="return false;">
                                     </div>
                                     <div class="project-info">
                                         <div class="project-info-wrap">
@@ -161,7 +162,7 @@
                     <div class="col-md-12">
                         <div id="text-3" class="widget widget_text">
                             <div class="textwidget">
-                                <img src="images/logo.svg" alt="Mountain">
+                                <img src="images/logo.png" alt="Mountain">
                             </div>
                         </div>
                     </div>
@@ -174,19 +175,19 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="social-links">
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-behance"></i></a>
-                            <a href="#"><i class="fa fa-rss"></i></a>
+                            <a target="_blank" href="https://weibo.com/u/5266139275"><i class="fa fa-weibo"></i></a>
+                            <a target="_blank" href="https://github.com/TeamSII"><i class="fa fa-github"></i></a>
+                            <a target="_blank" href="http://qm.qq.com/cgi-bin/qm/qr?k=sDsQjiwMTsC8N0bGV_qBdn5K3o7Nu671"><i
+                                    class="fa fa-qq"></i></a>
+                            <a target="_blank" href="https://space.bilibili.com/12444300"><i
+                                    class="fa fa-video-camera"></i></a>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="copyright">
-                            <div class="copyright-content">© Mountain 2015<span>•</span>15 Nicholson Street, New York
-                                <span>•</span> Tel: 1-888-345-6789<br>
+                            <div class="copyright-content">© TeamSII 2018
                                 <span>Copyright © 2015
-                                        <a href="#">Themesflat</a>, Inc.</span>
+                                        <p>Themesflat</p>, Inc.</span>
                             </div><!-- /.copyright-content -->
                         </div><!-- /.copyright -->
                     </div>
@@ -195,28 +196,6 @@
         </div>
     </div>
 </div>  <!-- /.site-wrapper -->
-
-<!-- Canvas -->
-<div id="off-canvas">
-    <div class="off-canvas-wrap">
-        <div id="text-5" class="widget widget_text">
-            <h3 class="widget-title">About Mountain</h3>
-            <div class="textwidget">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book. It has survived</p>
-                <div class="social-links">
-                    <a target="_blank" href="https://twitter.com/themesflat">
-                        <i class="fa fa-twitter"></i></a>
-                    <a target="_blank" href="https://facebook.com/themesflat"><i class="fa fa-facebook"></i></a>
-                    <a target="_blank" href="#"><i class="fa fa-instagram"></i></a>
-                    <a target="_blank" href="#"><i class="fa fa-behance"></i></a>
-                    <a target="_blank" href="#"><i class="fa fa-rss"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Go Top -->
 <a class="go-top">

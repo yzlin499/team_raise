@@ -45,7 +45,7 @@ public class AutoParseNewestRaises implements RaisesAchieveStrategy {
         return System.currentTimeMillis()-completeInfo.getLastAchieveTime() > achieveTime;
     }
 
-    private int[] downloadData(String name,String yyhName){
+    private Integer[] downloadData(String name, String yyhName) {
         try {
             return Jsoup.parse(NetTools.sendGet("https://zhongchou.modian.com/search", "key=" + URLEncoder.encode(name, "UTF-8")))
                     .body().getElementsByClass("pro_ul").first().children().stream()
@@ -53,14 +53,14 @@ public class AutoParseNewestRaises implements RaisesAchieveStrategy {
                     .filter(e-> yyhName==null || "".equals(yyhName) || e.getElementsByClass("author").first()
                             .getElementsByTag("p").first().text().equals(yyhName))
                     .filter(e-> !"appointment".equals(e.className()))
-                    .mapToInt(e-> Integer.valueOf(e.attr("data-pro-id")))
-                    .toArray();
+                    .map(e -> Integer.valueOf(e.attr("data-pro-id")))
+                    .toArray(Integer[]::new);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (NullPointerException e){
 
         }
-        return new int[0];
+        return new Integer[0];
     }
 
 

@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <!--[if IE]>
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <title>Mountain html template</title>
+    <title>TeamSII集资整合平台</title>
 
     <meta name="author" content="themesflat.com">
 
@@ -113,8 +113,6 @@
                         <%--此处是成员列表--%>
                         <ul class="project-filter">
                             <li class="active"><a data-filter="*" href="#">All</a></li>
-                            <li><a data-filter=".success" href="#">未完成</a></li>
-                            <li><a data-filter=".false" href="#">已完成</a></li>
                             <c:forEach items="${requestScope.memberInfoList}" var="memberInfo">
                                 <li><a data-filter=".member${memberInfo.id}" href="#">${memberInfo.name}</a></li>
                             </c:forEach>
@@ -122,7 +120,6 @@
                         </ul><!-- /.project-filter -->
                     </div>
                     <div class="project-wrap three-columns ">
-
 
                         <c:forEach items="${requestScope.raiseInfoList}" var="raiseInfo">
                             <div class="entry project-item member${raiseInfo.memberID} ">
@@ -179,16 +176,15 @@
                             <a target="_blank" href="https://github.com/TeamSII"><i class="fa fa-github"></i></a>
                             <a target="_blank" href="http://qm.qq.com/cgi-bin/qm/qr?k=sDsQjiwMTsC8N0bGV_qBdn5K3o7Nu671"><i
                                     class="fa fa-qq"></i></a>
+                            <a target="_blank" href="https://www.youtube.com/channel/UCBaVK4LkAsVA7jXxo1Tnykg"><i
+                                    class="fa fa-youtube"></i></a>
                             <a target="_blank" href="https://space.bilibili.com/12444300"><i
                                     class="fa fa-video-camera"></i></a>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="copyright">
-                            <div class="copyright-content">© TeamSII 2018
-                                <span>Copyright © 2015
-                                        <p>Themesflat</p>, Inc.</span>
-                            </div><!-- /.copyright-content -->
+                            <div class="copyright-content">© TeamSII 2018</div><!-- /.copyright-content -->
                         </div><!-- /.copyright -->
                     </div>
                 </div> <!-- /.row -->

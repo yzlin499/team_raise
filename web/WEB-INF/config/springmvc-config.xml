@@ -6,6 +6,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <context:component-scan base-package="top.yzlin.teamraise.servlet"/>
+    <mvc:resources mapping="/favicon.ico" location="/WEB-INF/resources/icon/"/>
     <mvc:resources mapping="/javascript/**" location="/WEB-INF/resources/javascript/"/>
     <mvc:resources mapping="/images/**" location="/WEB-INF/resources/images/"/>
     <mvc:resources mapping="/stylesheets/**" location="/WEB-INF/resources/stylesheets/"/>

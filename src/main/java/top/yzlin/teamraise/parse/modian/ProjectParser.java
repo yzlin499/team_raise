@@ -14,9 +14,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
-public class ProjectParser implements RaiseProjectParser {
+public class ProjectParser implements RaiseProjectParser<Integer> {
+
     @Override
-    public RaiseInfo[] getRaiseInfos(int[] ID) {
+    public RaiseInfo[] getRaiseInfos(Integer[] ID) {
         ArrayList<RaiseInfo> infoArrayList=new ArrayList<>(ID.length);
         Arrays.stream(ID)
                 .parallel()

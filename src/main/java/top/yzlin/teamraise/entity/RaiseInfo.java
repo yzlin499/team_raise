@@ -6,14 +6,14 @@ import top.yzlin.teamraise.parse.AlreadyRaise;
 import java.util.Date;
 
 public class RaiseInfo {
-    private int proID;
-    private int memberID;
-    private double goalMoney;
-    private String title;
-    private String url;
-    private Date endTime;
-    private String cover;
-    private String introduce;
+    private int proID;//项目ID
+    private int memberID;//成员ID
+    private double goalMoney;//目标金额
+    private String title;//标题
+    private String url;//地址
+    private Date endTime;//结束时间
+    private String cover;//封面地址
+    private String introduce;//集资简介
     private AlreadyRaise alreadyRaise;
 
     public void setIntroduce(String introduce) {

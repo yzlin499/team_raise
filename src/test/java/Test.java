@@ -20,11 +20,7 @@ import java.util.stream.Stream;
 
 public class Test {
     public static void main(String[]args){
-        JSONArray.parseArray(
-                JSONObject.parseObject(
-                        NetTools.sendPost("https://mapi.modian.com/v41/user/build_product_list",
-                                "to_user_id=1082202"
-                        ))
-                        .getString("data")).forEach(System.out::println);
+        System.out.println(JSONObject.parseObject(NetTools.sendPost("http://m202870.nofollow.axfree.mvote.cn/op.php",
+                "action=checkopaction&guid=0fa24065-cabe-bc45-7c03-e41faee04fb1")));
     }
 }
